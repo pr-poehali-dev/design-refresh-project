@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -165,26 +166,28 @@ const Index = () => {
       <nav className="bg-white border-b">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-8 py-4">
-            <Button
-              variant="ghost"
-              className="text-gray-700 hover:text-[#005BFF] font-medium"
-            >
-              <Icon name="Menu" className="w-4 h-4 mr-2" />
-              Каталог
-            </Button>
-            <div className="flex items-center space-x-6">
-              <a
-                href="#"
+            <Link to="/catalog">
+              <Button
+                variant="ghost"
                 className="text-gray-700 hover:text-[#005BFF] font-medium"
               >
+                <Icon name="Menu" className="w-4 h-4 mr-2" />
+                Каталог
+              </Button>
+            </Link>
+            <div className="flex items-center space-x-6">
+              <Link
+                to="/"
+                className="text-[#005BFF] hover:text-[#0051CC] font-medium"
+              >
                 Главная
-              </a>
-              <a
-                href="#"
+              </Link>
+              <Link
+                to="/catalog"
                 className="text-gray-700 hover:text-[#005BFF] font-medium"
               >
                 Каталог
-              </a>
+              </Link>
               <a
                 href="#"
                 className="text-gray-700 hover:text-[#005BFF] font-medium"
@@ -256,27 +259,40 @@ const Index = () => {
             Категории товаров
           </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((category, index) => (
-              <Card
-                key={index}
-                className="hover:shadow-lg transition-shadow cursor-pointer border-gray-200"
-              >
-                <CardContent className="p-4 text-center">
-                  <div className="w-12 h-12 bg-[#005BFF]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <Icon
-                      name={category.icon}
-                      className="w-6 h-6 text-[#005BFF]"
-                    />
-                  </div>
-                  <h3 className="font-semibold text-gray-900 text-sm mb-1">
-                    {category.name}
-                  </h3>
-                  <p className="text-xs text-gray-500">
-                    {category.count} товаров
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+            {categories.map((category, index) => {
+              const categorySlug =
+                category.name === "Амортизаторы"
+                  ? "amortizatory"
+                  : category.name === "Стойки"
+                    ? "stoyki"
+                    : category.name === "Пружины"
+                      ? "pruzhiny"
+                      : category.name === "Технорессоры"
+                        ? "tehnoresory"
+                        : category.name === "Подвеска"
+                          ? "podveska"
+                          : "vaz";
+              return (
+                <Link key={index} to={`/catalog/${categorySlug}`}>
+                  <Card className="hover:shadow-lg transition-shadow cursor-pointer border-gray-200">
+                    <CardContent className="p-4 text-center">
+                      <div className="w-12 h-12 bg-[#005BFF]/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                        <Icon
+                          name={category.icon}
+                          className="w-6 h-6 text-[#005BFF]"
+                        />
+                      </div>
+                      <h3 className="font-semibold text-gray-900 text-sm mb-1">
+                        {category.name}
+                      </h3>
+                      <p className="text-xs text-gray-500">
+                        {category.count} товаров
+                      </p>
+                    </CardContent>
+                  </Card>
+                </Link>
+              );
+            })}
           </div>
         </div>
       </section>
@@ -328,9 +344,11 @@ const Index = () => {
                   </div>
                 </CardHeader>
                 <CardContent className="p-4">
-                  <CardTitle className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2">
-                    {product.name}
-                  </CardTitle>
+                  <Link to={`/product/${product.id}`}>
+                    <CardTitle className="text-lg font-semibold text-gray-900 mb-2 line-clamp-2 hover:text-[#005BFF]">
+                      {product.name}
+                    </CardTitle>
+                  </Link>
 
                   <div className="flex items-center space-x-2 mb-3">
                     <div className="flex items-center">

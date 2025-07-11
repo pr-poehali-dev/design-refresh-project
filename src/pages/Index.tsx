@@ -17,12 +17,12 @@ const Index = () => {
   const [cartCount, setCartCount] = useState(0);
 
   const categories = [
-    { name: "Автозапчасти", icon: "Car", count: "10K+" },
-    { name: "Амортизаторы", icon: "Zap", count: "5K+" },
-    { name: "Стойки", icon: "Wrench", count: "3K+" },
-    { name: "Пружины", icon: "Circle", count: "2K+" },
-    { name: "Подвеска", icon: "Gauge", count: "8K+" },
-    { name: "Технорессоры", icon: "Cog", count: "1K+" },
+    { name: "Амортизаторы", icon: "Zap", count: "200+" },
+    { name: "Стойки", icon: "Wrench", count: "150+" },
+    { name: "Пружины", icon: "Circle", count: "100+" },
+    { name: "Технорессоры", icon: "Cog", count: "80+" },
+    { name: "Подвеска", icon: "Gauge", count: "300+" },
+    { name: "Запчасти ВАЗ", icon: "Car", count: "500+" },
   ];
 
   const products = [
@@ -189,13 +189,13 @@ const Index = () => {
                 href="#"
                 className="text-gray-700 hover:text-[#005BFF] font-medium"
               >
-                Бренды
+                ДЕМФИ
               </a>
               <a
                 href="#"
                 className="text-gray-700 hover:text-[#005BFF] font-medium"
               >
-                Акции
+                Подбор по авто
               </a>
               <a
                 href="#"
@@ -222,26 +222,27 @@ const Index = () => {
               Стойки и амортизаторы ДЕМФИ
             </h1>
             <p className="text-xl mb-8 opacity-90">
-              Качественные автозапчасти для вашего автомобиля
+              Интернет-магазин автозапчастей. Качественные стойки и амортизаторы
+              ДЕМФИ для отечественных автомобилей.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Badge
                 variant="secondary"
                 className="bg-white/20 text-white text-sm px-4 py-2"
               >
-                ✓ Гарантия качества
+                ✓ Гарантия производителя
               </Badge>
               <Badge
                 variant="secondary"
                 className="bg-white/20 text-white text-sm px-4 py-2"
               >
-                ✓ Быстрая доставка
+                ✓ Доставка по России
               </Badge>
               <Badge
                 variant="secondary"
                 className="bg-white/20 text-white text-sm px-4 py-2"
               >
-                ✓ Лучшие цены
+                ✓ Заводские цены
               </Badge>
             </div>
           </div>
@@ -408,21 +409,21 @@ const Index = () => {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-4">Каталог</h3>
+              <h3 className="font-semibold mb-4">Каталог ДЕМФИ</h3>
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
                   <a href="#" className="hover:text-white">
-                    Амортизаторы
+                    Амортизаторы ДЕМФИ
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
-                    Стойки
+                    Стойки ДЕМФИ
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
-                    Пружины
+                    Пружины занижения
                   </a>
                 </li>
                 <li>
@@ -438,22 +439,22 @@ const Index = () => {
               <ul className="space-y-2 text-sm text-gray-400">
                 <li>
                   <a href="#" className="hover:text-white">
-                    О компании
+                    О производителе ДЕМФИ
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
-                    Доставка
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white">
-                    Оплата
+                    Доставка и оплата
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-white">
                     Гарантия
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white">
+                    Подбор по VIN
                   </a>
                 </li>
               </ul>
@@ -464,7 +465,7 @@ const Index = () => {
               <div className="space-y-2 text-sm text-gray-400">
                 <div className="flex items-center">
                   <Icon name="Phone" className="w-4 h-4 mr-2" />
-                  <span>+7 (800) 555-0123</span>
+                  <span>8 (800) 555-ДЕМФИ</span>
                 </div>
                 <div className="flex items-center">
                   <Icon name="Mail" className="w-4 h-4 mr-2" />
@@ -472,7 +473,7 @@ const Index = () => {
                 </div>
                 <div className="flex items-center">
                   <Icon name="MapPin" className="w-4 h-4 mr-2" />
-                  <span>Москва, ул. Автозаводская, 1</span>
+                  <span>Россия, склады в 15 городах</span>
                 </div>
               </div>
             </div>
